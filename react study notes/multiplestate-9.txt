@@ -1,0 +1,424 @@
+
+
+// react can use multiple state hooks is possible thistype of code & multiple state in
+object this based code listed below.
+
+
+
+code ......Scooter.js
+
+
+
+
+
+
+
+// multiple state in usestate Hooks
+
+import { useState } from "react"
+
+
+function Scooter(){
+
+    const [color , setcolor] = useState("Red")
+    const [brand , setbrand] = useState("Honda")
+    const [model , setmodel] = useState("6GActiva")
+    const [year , setyear] = useState("2024")
+
+    return(
+        <div>
+            <h2>My Scooter</h2>
+            
+            <p>color: {color}</p>
+
+            <button onClick={() => { setcolor('black') }}>Change color</button>
+
+            <p>Brand: {brand} </p>
+
+            <button onClick={() => { setbrand('maruthi') }}>Change Brand</button>
+
+            <p>model: {model}</p>
+
+            <button onClick={() => { setmodel('5G Activa') }}>Change model</button>
+
+            <p> Year : {year} </p>
+
+            <button onClick={() => { setyear('2025') }}>Change year</button>
+
+        </div>
+    );
+}
+
+export default Scooter;
+
+
+
+
+
+index.js file can import the <Scooter/> is necessary 
+
+
+
+code....
+
+
+
+mport React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/> 
+     <Car/>
+     <Scooter/>
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+output:
+
+
+
+.......
+
+
+
+
+My Scooter
+color: black
+
+Change color
+Brand: maruthi
+
+Change Brand
+model: 5G Activa
+
+Change model
+Year : 2025
+
+Change year
+
+
+
+
+
+//03.....multiple state in object code...
+
+
+
+
+focus on mainly this code work
+
+
+code ..............................................
+
+
+
+const [Scooter,setScooter] =useState(
+        
+        {
+            color :"red",
+            brand :"Honda",
+            model :"6GActiva",
+            year : "2024"
+        }
+        );
+
+function updatecolor () {
+            //setScooter ({color:"blue"});
+
+            setScooter(previousstate=>{
+                return {...previousstate, color:"blue", brand:"maruthi"}
+            })
+        };
+
+
+
+...............................
+
+
+
+
+
+
+// multiple state in usestate Hooks
+
+import { useState } from "react"
+
+
+function Scooter(){
+
+    //const [color , setcolor] = useState("Red")
+    //const [brand , setbrand] = useState("Honda")
+    //const [model , setmodel] = useState("6GActiva")
+    //const [year , setyear] = useState("2024")
+
+
+    // above same as implement multilpe state used in object
+
+    const [Scooter,setScooter] =useState(
+        
+        {
+            color :"red",
+            brand :"Honda",
+            model :"6GActiva",
+            year : "2024"
+        }
+        );
+
+function updatecolor () {
+            //setScooter ({color:"blue"});
+
+            setScooter(previousstate=>{
+                return {...previousstate, color:"blue", brand:"maruthi"}
+            })
+        };
+    
+    console.log('current state',Scooter)
+    return(
+        <div>
+            <h2>My Scooter</h2>
+            
+            {/* <p>color: {color}</p> */}
+
+            <p>color: {Scooter.color}</p>
+
+            
+
+            {/* <p>Brand: {brand} </p> */}
+
+            <p>Brand: {Scooter.brand} </p>
+
+            
+
+            {/* <p>model: {model}</p> */}
+
+            <p>model: {Scooter.model}</p>
+
+            
+
+            {/* <p> Year : {year} </p> */}
+            <p> Year : {Scooter.year} </p>
+
+            
+           <button onClick={updatecolor}>change color</button>
+        </div>
+    );
+}
+
+export default Scooter;
+
+
+
+
+
+
+
+index.js file can import the <Scooter/> is necessary 
+
+
+
+code....
+
+
+
+mport React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/> 
+     <Car/>
+     <Scooter/>
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+output:
+
+
+
+My Scooter
+color: black
+
+Change color
+Brand: maruthi
+
+Change Brand
+model: 5G Activa
+
+Change model
+Year : 2025
+
+Change year
+
+
+
+
+
+//04.... multiple object used in state react hooks in class component using code .
+
+
+
+code...........
+
+
+
+
+
+//class components using react state.
+
+import React from "react";
+
+class Car extends React.Component{
+    
+    constructor (){
+
+        super();
+        this.state = {color:"red",model:"maruthi",price:"25,00000"}
+    }
+
+  render(){
+        return(
+            <div>
+
+             <h2> my car color is {this.state.color}
+             and model is {this.state.model}  & suitable price is {this.state.price}</h2>
+
+             {/* <button onClick={()=>{this.setState({color:"blue"})}}>
+             change color</button> */}
+
+             <button onClick = {() => {this.setState((previousstate) =>
+             {return{...previousstate, color:"blue",price:"35,00000"}})}}>change color</button>
+
+           </div>
+        
+        );
+    }
+}
+
+export default Car;
+
+
+
+index.js file can import the <Scooter/> is necessary 
+
+
+
+code....
+
+
+
+mport React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/> 
+     <Car/>
+     <Scooter/>
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+output:
+
+
+
+my favorite color is blue
+Change color
+
+
+........class component output:...................
+
+
+
+
+my car color is redand model is maruthi & suitable price is 25,00000
+change color
+
+
+
+
+........function component output:.......................
+
+
+My Scooter
+
+
+
+color: red
+
+Brand: Honda
+
+model: 6GActiva
+
+Year : 2024
+
+change color
+
+
+
+
+
+............................xxxxxxxxxxxxxxxxxxxxxxxxx.........................
+
+
+.....  All @copy rigths reserved renu vijay.v..............

@@ -1,0 +1,77 @@
+
+
+the react beefore 16-th version use the componemts is -class components
+
+later the version 16 add the oops concept using function type components use 
+
+
+but the two are same work
+
+
+eg: class component 
+
+
+can create the file name components 
+
+
+            - Apple.js and include the code.
+
+code..........
+
+
+
+import React from "react";
+
+class Apple extends  React.Component{
+
+    render(){
+        return(
+            <h2>I'am Apple! </h2>
+        )
+    }
+
+}
+
+export default Apple;
+
+
+
+
+and after the code can import from Garbage.js
+
+
+
+import Car from './Car'
+
+import Apple from './Apple';              .....this line import code 
+
+function Garbage(){
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+        <Car/>
+        <Apple/>                         ....this line can add 
+      </div>
+        
+    );
+  }
+
+  export default Garbage;
+
+
+
+
+this is class components output:
+
+
+
+garbage affects health.
+
+Hai iam studying react
+
+I'am Apple!......this is class component main output
+
+
+
+
+..............................XXXXXXXXXXXXXXXXXXXXXXXXXX.........................

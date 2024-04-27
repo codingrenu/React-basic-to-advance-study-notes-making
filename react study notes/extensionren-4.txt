@@ -1,0 +1,172 @@
+Extension rendering is aminly use the content displayed and hiden in the webbrowser.
+
+
+
+so using this concept 
+
+
+
+//const carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+const carInfo ={};
+
+
+
+{carInfo.brand !== undefined && carInfo.color !== undefined 
+        && carInfo.price !== undefined ? 
+
+        <Car carinfo= {carInfo}/ > :null}
+
+
+
+this code ....   
+
+  const carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+  //const carInfo ={};
+
+
+output :
+
+
+
+
+
+this code output:
+
+const carInfo ={};
+I'am a undefined undefined car price undefined is most suitable
+
+this code output:
+
+const carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+I'am a black red car 25,0000  is most suitable.
+
+
+
+const showcarInfo = carInfo.brand !== undefined && carInfo.color !== undefined 
+    && carInfo.price !== undefined;
+
+
+this code !== condition satisfy show the result.
+
+
+output:
+
+I'am a black red car 25,0000  is most suitable.
+
+
+
+
+
+
+
+output:
+
+garbage affects health.
+I'am a undefined undefined car price undefined is most suitable
+I'am a blue fujji Apple phone!.
+
+
+
+import Car from './Car'
+
+import Apple from './Apple';
+
+function Garbage(){
+
+  const doorisopen =false;
+  //const brand ='maruthi';
+  //const color ='red';
+ // using object
+
+  //const carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+  const carInfo ={};
+
+  const appleInfo ={type :"fujji",color: "blue",}
+
+  
+
+
+
+
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        {/* <Car brand ={brand} color ={'red'} price={'25,0000'}/> */}
+
+        {/* <Car brand="maruthi" color ="red"/> */}
+
+        {carInfo.brand !== undefined && carInfo.color !== undefined 
+        && carInfo.price !== undefined ? 
+
+        <Car carinfo= {carInfo}/ > :null}
+
+        <Apple appleInfo ={appleInfo}/>
+        {doorisopen?<h2>door is open</h2>:<h2>door is closed</h2>}
+      </div>
+        
+    );
+  }
+
+  export default Garbage;
+
+
+
+
+import Car from './Car'
+
+import Apple from './Apple';
+
+function Garbage(){
+
+  const doorisopen =false;
+  //const brand ='maruthi';
+  //const color ='red';
+ // using object
+
+  //cons t carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+  const carInfo ={};
+
+  const appleInfo ={type :"fujji",color: "blue",}
+
+  const showcarInfo = carInfo.brand !== undefined && carInfo.color !== undefined 
+    && carInfo.price !== undefined;
+
+  
+
+
+
+
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        {/* <Car brand ={brand} color ={'red'} price={'25,0000'}/> */}
+
+        {/* <Car brand="maruthi" color ="red"/> */}
+
+       // {showcarInfo ? <Car carinfo= {carInfo}/ > :null}
+
+       // {showcarInfo &&  <Car carinfo= {carInfo}/ > :null}
+
+
+        <Apple appleInfo ={appleInfo}/>
+
+        {doorisopen?<h2>door is open</h2>:<h2>door is closed</h2>}....
+
+        true (or) false condition so use the ternary correct is correct
+
+
+      </div>
+        
+    );
+  }
+
+export default Garbage;
+
+

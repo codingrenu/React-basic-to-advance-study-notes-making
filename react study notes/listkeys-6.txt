@@ -1,0 +1,30 @@
+list key value is deermining the individual specifying so cretae 
+
+
+number type this
+
+const carcount =[1,2,3,4,5,6];
+
+<ul>
+
+ { carcount.map((d,index )=><p key={index}>{d}</p>)}
+
+</ul>
+
+
+
+string type this
+
+
+const carList =[
+
+    {brand:"BMW",color:"red"},
+
+    {brand:"Maruthi",color:"blue"},
+
+    {brand:"Tesla",color:"black"},
+  ];
+
+
+ { carList.map((carInfo)=> <li key ={carInfo.brand}> <Car carInfo ={carInfo}/></li>)};
+

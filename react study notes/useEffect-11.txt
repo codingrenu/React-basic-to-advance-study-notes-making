@@ -1,0 +1,284 @@
+
+//React useState can work with changes in the web browser 
+
+// React useEffect can work with changes in the render purpose 
+
+render means changes 
+
+
+so create the Timer.js.....
+
+
+// understanding use effect
+
+import { useEffect,useState } from "react";
+
+
+
+function Timer(){
+
+    
+    useEffect(()=> {
+
+        console.log("referesh render pages");
+        
+    },[])
+
+
+// using usestate
+
+
+   const [count,setcount] = useState(0);
+
+
+function updatecount(){
+
+    setcount((previousstate)=>{ return previousstate+1});
+
+}
+
+function checkout(){
+    
+    if( count>10){
+
+        setcount('1');
+    };
+    
+};
+
+
+
+    return(
+        <div>
+            <h1>I have rendered react{count} pages!</h1>
+
+
+
+            <button onClick={updatecount}>Increase count</button>
+
+
+        </div>
+    );
+
+}
+
+export default Timer;
+
+
+
+
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+import Scooter from './components/Scooter';
+import List from './components/List';
+import Timer from './components/Timer';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/>
+     <Car/>
+     <Scooter/>
+     <List/>
+     <Timer/>
+    
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+output:
+
+this page can render show in inspect pages.
+
+
+
+
+02  //  after that react use effect work code implment.
+
+
+
+
+
+
+// understanding use effect
+
+import { useEffect,useState } from "react";
+
+
+
+function Timer(){
+
+    const [count,setcount] = useState(0);
+    
+    ....after the usestate can implement in the Timer Function.
+
+
+
+
+    useEffect(()=> {
+
+        console.log("refersh render pages");
+
+        checkout();........ 
+        
+        checkout is necessary for calling in the fuction. 
+
+
+    }, [count])  -----extra add count is necessary for render purpose.  
+
+
+// using usestate
+
+
+   //const [count,setcount] = useState(0);
+
+
+function updatecount(){
+
+    setcount((previousstate)=>{ return previousstate+1});
+
+}
+
+// extra add checkout in the code 
+
+function checkout(){
+    
+    if( count>10){
+
+        setcount('1');
+    };
+    
+};
+
+
+
+    return(
+        <div>
+            <h1>I have rendered react{count} pages!</h1>
+
+
+
+            <button onClick={updatecount}>Increase count</button>
+
+
+        </div>
+    );
+
+}
+
+export default Timer;
+
+
+
+
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+import Scooter from './components/Scooter';
+import List from './components/List';
+import Timer from './components/Timer';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/>
+     <Car/>
+     <Scooter/>
+     <List/>
+     <Timer/>
+    
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+
+
+
+
+output:
+
+
+the renere will 10 times more defult starting in continues 1 times
+
+
+
+
+
+04.../////  understanding useEffect in different way is rare used because
+
+the react app referesh second to secons so the use is avoid is must
+
+
+
+code...
+
+/*
+
+understanding useEffect in different ways...
+
+
+function Timer(){
+
+
+    const [count,setcount] = useState(0);
+    useEffect(()=> {
+
+        console.log("refersh render pages");
+        //checkout();
+        //setcount(1);
+
+        setTimeout((previousstate) => {return previousstate +1})
+
+},1000)
+
+}) */
+
+
+
+
+output: 
+
+every second rendering and continuously run .

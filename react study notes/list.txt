@@ -1,0 +1,162 @@
+list can store in arry format code ...
+
+import Car from './Car'
+
+import Apple from './Apple';
+
+function Garbage(){
+
+  const doorisopen =true;
+
+  //const doorisopen =false;
+
+  //const brand ='maruthi';
+  //const color ='red';
+  
+ // using object
+
+  const carInfo = {brand:"maruthi", color:"red" };
+
+ //const carInfo ={};
+
+  const appleInfo ={type :"fujji",color: "blue"}
+
+  const showcarInfo = carInfo.brand !== undefined && carInfo.color !== undefined
+  
+
+
+
+  ....................list.......
+
+// list 
+
+  const carList =[
+
+    {brand:"BMW",color:"red"},
+
+    {brand:"Maruthi",color:"blue"},
+
+    {brand:"Tesla",color:"black"},
+  ];
+
+
+
+  return(
+      <div>
+        <h2>garbage affects health.</h2>
+       
+        {/* <Car brand ={brand} color ={'red'} /> */}
+
+        {/* <Car brand="maruthi" color ="red"/> */}
+
+        {/* {showcarInfo ? <Car carinfo= {carInfo}/> :null} */}
+
+        {/* {carInfo.brand !==undefined && carInfo.color !== undefined 
+        && ?<car carInfo={carInfo}/>:null} */}
+
+        {/* {showcarInfo && <Car carInfo= {carInfo}/>:null} */}
+
+        
+
+        {showcarInfo?<Car carInfo= {carInfo}/>:null}
+
+        <Apple appleInfo ={appleInfo}/>
+
+        {doorisopen?<h2>door is open</h2>:<h2>door is closed</h2>}
+
+
+
+
+
+
+
+
+
+
+
+list using inside  the code.........
+
+        <ul type ="disc">
+
+        { carList.map((carInfo)=> <li><Car carInfo ={carInfo}/></li>)};
+
+          
+        </ul >
+
+
+
+
+      </div>
+        
+    );
+  }
+
+export default Garbage;
+
+
+
+
+
+......................car.js code...........................
+
+/* components 
+
+function Car(){
+    return(
+        <h2>Hai iam studying react</h2>.....using list can store <h2> format 
+    );
+  }
+
+  export default Car;
+
+*/
+
+//props
+
+function Car(props){
+
+    //const {brand,color,price}= props;
+
+    const {carInfo}=props;
+    const {brand,color}= carInfo;
+    const  text =`I'am   ${color} color ${brand} is most suitable `;
+    return(
+        <h2>{text}</h2>
+    );
+  }
+
+  export default Car;
+
+
+
+
+
+
+output:
+
+
+garbage affects health.
+
+I'am red color maruthi is most suitable
+
+I'am a blue fujji Apple phone!.
+
+door is open
+
+I'am red color BMW is most suitable
+
+I'am blue color Maruthi is most suitable
+
+I'am black color Tesla is most suitable
+
+
+
+
+
+
+
+
+
+
+
+

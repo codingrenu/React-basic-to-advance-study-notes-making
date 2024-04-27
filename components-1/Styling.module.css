@@ -1,0 +1,10 @@
+
+.hyperlink{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    font-family:sanserif;
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+}

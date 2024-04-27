@@ -1,0 +1,404 @@
+the props,state, are also working in both function and class 
+
+
+eG: props in function .
+
+function car(){
+    const text ="I'am a car";
+    return(
+        <h2>{text}</h2
+    );
+}
+
+export default car;
+
+after changing brand name using code ..
+
+function car(){
+
+    const brand ='suzuki';
+    const text =`I'am a ${brand} car`;----using template string -(backtick)
+    return(
+        <h2>{text}</h2
+    );
+}
+
+export default car;
+
+
+
+
+ok now working on the car.js file 
+
+
+using function not include brand value instead using another 
+garage function component 
+
+
+this is using props 
+
+
+props means  component inside properties is called props.
+
+    props= properties
+
+    espesically props is 
+
+    props =Data(string,number)
+
+
+
+props is simple define 
+
+
+ it will pass various component the data is called props 
+
+
+ eg : the Garbage component can crate the brand value  and self closing tag can add the attribute
+
+ and next come to car.js and 
+
+
+ car component 
+
+
+ function car(props)
+
+ destructruing conceptusing call the brand name 
+
+
+ eg code 
+
+ Garbage.js code 
+
+
+ import Apple from './Apple';
+
+function Garbage(){
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+        <Car/>
+        <Apple/>
+      </div>
+        
+    );
+  }
+
+  using barnd value intialise code 
+
+
+  import Apple from './Apple';
+
+function Garbage(){
+    const brand ='maruthi'    car.js code cut and to put use
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        <Car brand ={brand}/>        .... attribute set props purpose
+
+        <Apple/>
+      </div>
+        
+    );
+  }
+
+export default Garbage;
+
+then brand vaalue set afetr car.js code 
+
+
+code...
+
+
+using props get use the destructruing props get 
+
+code car() pass the parameters eg
+
+
+function Car(props){
+
+    const {brand} =props;
+
+    const text = 'I'am a ${brand} car`;
+
+
+    return(
+        <h2>text</h2>
+    );
+  }
+
+  export default Car;
+
+
+
+ok the one place to various palce pass the properties is mainly use the props.
+
+
+
+but one component to pass themany props properties 
+
+eg ,data , text,number
+
+
+this type of code listed below.
+
+
+
+
+
+Garbage.js.....
+
+
+
+function Garbage(){
+    const brand ='maruthi';            .... car.js code cut and to put use
+
+    const color ='red';
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        <Car brand ={brand} color ={color}/>        .... attribute set props purpose
+
+        <Apple/>
+      </div>
+        
+    );
+  }
+
+export default Garbage;
+
+
+
+
+
+car.js code
+
+function Car(props){
+
+    const {brand ,color} =props;
+
+    const text = 'I'am a $ {color} ${brand} car`;
+
+
+    return(
+        <h2>text</h2>
+    );
+  }
+
+  export default Car;
+
+
+
+
+another type...
+
+
+
+
+
+Garbage.js.....
+
+
+
+function Garbage(){
+    const brand ='maruthi';            .... car.js code cut and to put use
+
+    //const color ='red';   ...this method
+
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        <Car brand ={brand} color ={'red'} price={'25,0000'}/>        .... attribute set props purpose
+
+        <Apple/>
+      </div>
+        
+    );
+  }
+
+export default Garbage;
+
+
+
+
+
+car.js
+
+
+
+car.js code
+
+function Car(props){
+
+    const {brand ,color} =props;
+
+    const text = 'I'am a $ {color} ${brand} ${price } car is most suitable.`;
+
+
+    return(
+        <h2>text</h2>
+    );
+  }
+
+  export default Car;
+
+
+  
+
+
+// ok now the props can use the object method its same work 
+
+
+
+eg code : 
+
+
+Garbage.js
+
+
+import Car from './Car'
+
+import Apple from './Apple';
+
+function Garbage(){
+  //const brand ='maruthi';
+  //const color ='red';
+ // using object
+
+  const carInfo = {brand :"maruthi", color:"red", price :"25,0000"};
+
+
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        {/* <Car brand ={brand} color ={'red'} price={'25,0000'}/> */}
+
+        {/* <Car brand="maruthi" color ="red"/> */}
+
+        <Car carinfo= {carInfo}/>
+
+        <Apple/>
+      </div>
+        
+    );
+  }
+
+  export default Garbage;
+
+
+
+
+
+code Car.js
+
+//props
+
+function Car(props){
+
+    //const {brand,color,price}= props;
+
+    const {carinfo}=props;
+    const {brand,color,price}= carinfo;
+
+    
+    
+
+
+
+    
+    const  text =`I'am a ${color} ${brand}  car price ${price} is most suitable `;
+    return(
+        <h2>{text}</h2>
+    );
+  }
+
+  export default Car;
+
+
+output:
+
+
+garbage affects health.
+I'am a red maruthi car price 25,0000 is most suitable
+I'am Apple!
+
+
+
+//02 class props code ..
+
+
+
+
+Garbage.js
+
+
+code..............
+
+
+
+import Car from './Car'
+
+import Apple from './Apple';
+
+function Garbage(){
+  //const brand ='maruthi';
+  //const color ='red';
+ // using object
+
+  const carInfo = {brand :"maruthi", color:"red", price :"25,0000" };
+
+  const appleInfo ={type :"fujji",color: "blue",}
+
+
+    return(
+      <div>
+        <h2>garbage affects health.</h2>
+
+        {/* <Car brand ={brand} color ={'red'} price={'25,0000'}/> */}
+
+        {/* <Car brand="maruthi" color ="red"/> */}
+
+        <Car carinfo= {carInfo}/>
+
+        <Apple appleInfo ={appleInfo}/>
+      </div>
+        
+    );
+  }
+
+  export default Garbage;
+
+
+Apple.js       class props code 
+
+import React from "react";
+
+class Apple extends  React.Component{
+
+    render(){
+        const {appleInfo} = this.props;
+        const {type,color} = appleInfo;
+        return(
+            <h2>I'am a {color} {type} Apple phone!. </h2>
+        )
+    }
+
+}
+
+export default Apple;
+
+
+
+
+
+output:
+
+
+garbage affects health.
+I'am a red maruthi car price 25,0000 is most suitable
+I'am a blue fujji Apple phone!.

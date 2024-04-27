@@ -1,0 +1,257 @@
+
+
+react game....number guessing game in the range of 1 to 10.
+
+using installing some commands create styling purrposes.
+
+.......
+
+
+        installing  
+        
+         npm i react-router-dom
+
+.............
+
+
+
+App.css
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+body{
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15%;
+
+}
+
+.container{
+  padding: 10px;
+  border: 2px solid whitesmoke;
+  width: 500px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(255,255,255);
+}
+
+.head{
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+input{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+input:hover{
+  background-color: rgb(158,156,152);
+}
+
+input:focus{
+  color:beige;
+  border: 0px ;
+}
+
+
+
+....css can complete this code 
+
+
+
+App.js code ...
+
+
+these  import mainly is
+
+    ...usestate,Result,....
+
+
+01.//
+
+const secretNum =Math.floor(Math.random()*10)+1;
+
+these is mainly use for selecting 1 to computer can choose purpose.
+
+
+
+
+
+
+
+
+
+import logo from './logo.svg';
+import './App.css';
+import { useState } from 'react';
+
+
+import Result from './Result';
+
+
+
+
+
+const secretNum =Math.floor(Math.random()*10)+1;
+
+function App() {
+
+
+  //  {next higher and lower choosing complex code writeso use the secret num variable}
+
+  // using random so use value purpose and scecretnumcnpass tthprops based 
+
+  // in the term,and secretNum
+
+    
+
+
+   
+  /* the every time number temporar  and  store so use uses tate  and use 
+  handle change function */  
+
+    const [term,setTerm]= useState("")...props
+
+    const handlechange=(e)=>{....function use
+      setTerm(e.target.value)
+    }
+
+
+  return (
+    
+
+    
+    
+    <div className="container">
+      <div className="head">
+
+        <label htmlFor='term'>
+          
+          {/* {guess the number between 1 to 10 answer({secretNum}) showing pupose} */}
+
+          guess the number between 1 to 10 
+          
+        </label>
+
+      </div>
+
+      
+      <input    
+          id ='term'
+          type='text'
+          name='term'
+          onChange={handlechange}
+
+          /* onChange={handlechange}its intialise chnging purpose sothe 
+          function is use*/
+
+          
+
+          /> 
+          <Result  secretNum={secretNum} term={term}/> 
+
+          {/* {in the term,and secretNum can pass props base inthr result.} */}
+
+           {/* {choosing lower concept function can use} */}
+        
+      
+
+
+    </div>
+
+  );
+}
+
+export default App;
+
+
+
+
+Result.js code ....................
+
+
+the props can use the (term,secretNum)...
+
+this code can logic use purpose. 
+
+
+
+
+
+
+// Result.js
+import React from 'react';
+
+function Result({ secretNum, term }) {
+
+  let result;
+
+  if (term ) {
+    if (term > secretNum) { 
+      result = 'Higher';
+    } else if (term < secretNum) { 
+      result = 'Lower';
+    } else if (term == secretNum) { 
+      result = 'Yippee! Correct!';
+    } else {
+      result = 'Please enter a valid input!';
+    }
+  }
+
+  return (
+    <h3>You guessed: {result}</h3>
+  );
+}
+
+export default Result;
+
+
+................................xxxxxxxxxxxxxxxxxxxxxxxxxxx...................
+
+

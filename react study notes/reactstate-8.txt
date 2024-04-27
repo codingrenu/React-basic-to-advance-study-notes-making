@@ -1,0 +1,114 @@
+react can use the react state 
+
+it can apply in two ways
+
+1.......function component ways
+
+2..............another class component way.
+
+
+
+
+1.......class  component way code ....................
+
+
+
+
+//class components using react state.
+
+import React from "react";
+
+class Car extends React.Component{
+    
+    constructor (){
+
+        super();
+        this.state = {color:"red"}
+    }
+
+  render(){
+        return(
+            <>
+             <h2> my car color is {this.state.color}</h2>
+             <button onClick={()=>{this.setState({color:"blue"})}}>change color</button>
+           </>
+        
+        );
+    }
+}
+
+export default Car;
+
+
+
+output:
+
+    My favorite color is doggerblue
+    Change color
+
+
+
+//02..... react using create react state in function component way.
+
+import { useState } from "react";
+
+
+function Favoritecolor() {
+    //let color = 'blue';
+
+   const [color,setcolor]  =  useState('blue');
+
+    return (
+      <div>
+        <h2>My favorite color is {color}</h2>
+
+        {/* <button onClick={() => { color = 'blue' }}>Change color</button> */}
+        <button onClick={() => { setcolor('doggerblue') }}>Change color</button>
+      </div>
+    );
+  }
+  
+  export default Favoritecolor;
+  
+output:
+
+
+my car color is blue
+change color
+
+
+03.... index.js code page 
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import Favoritecolor from './components/Favoritecolor';
+import Car from './components/Car';
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    
+     <Favoritecolor/>.......function code 
+     <Car/>....................class code 
+    
+    
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+

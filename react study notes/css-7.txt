@@ -1,0 +1,158 @@
+//
+
+learning css in react.
+
+create Styling.js file 
+
+create function code..
+
+
+
+function Styling(){
+    return
+    <>
+      <h1> I'am learning css</h1>
+      <p> Hai how are you</P
+    </>
+}
+
+
+
+export default Styling;
+
+
+
+and import the code in index.js file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# apply styles for css 
+
+another type import 
+
+import 'Styling.css'
+
+const mystyle =[
+    color:red;
+    font-family:san-serif;
+    text-align:center;
+    backgroundColor:doggerblue;
+]
+
+
+
+function Styling(){
+    return
+    <>
+      
+    
+    //<h1 style{{color:"red", backgroundColor:"pink"}}> I'am learning css</h1>
+
+    <h1 {mystyle}>I'am learning css</h1>
+    <p> Hai how are you</P
+    </>
+}
+
+
+
+export default Styling;
+
+
+
+
+# Header.css file can include code 
+
+
+body{
+    color:red;
+    font-family:san-serif;
+    text-align:center;
+    backgroundColor:doggerblue;
+}
+
+
+but the style can display whole page 
+
+
+
+particularly one text can styling react can be used in modeules
+
+
+go to components create 
+
+
+Header.module.css
+
+create class name 
+
+
+.smallblue {
+    color:red;
+    font-family:san-serif;
+    text-align:center;
+    backgroundColor:doggerblue;
+}
+
+
+
+after import 
+
+
+import 'Styling.css'
+
+
+import styles from Header.module.css
+
+
+
+code 
+
+
+import 'Styling.css'
+
+const mystyle =[
+    color:red;
+    font-family:san-serif;
+    text-align:center;
+    backgroundColor:doggerblue;
+]
+
+
+
+function Styling(){
+    return
+    <>
+      
+    
+    //<h1 style{{color:"red", backgroundColor:"pink"}}> I'am learning css</h1>
+
+    <h1 {mystyle}>I'am learning css</h1>
+
+    <h1 {className:.smallblue}> I'am learning css</h1>
+
+    particularly this text can align some styles .
+
+
+    <p> Hai how are you</P
+    </>
+}
+
+
+
+export default Styling;

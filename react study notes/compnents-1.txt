@@ -1,0 +1,237 @@
+//creating components
+
+
+
+any ware crete components in react they use function and more importantfunction
+name starting is uppercase is must 
+
+.....case sensitive 
+
+and compomnents can call parent this reason call parent
+
+
+function Car(){
+    return(
+        <h2>renu vijay</h2>
+    );
+}
+
+
+
+// components can use many interfaces code so craete two component
+
+
+function Garbage(){
+    return(
+        <div>
+        <h2>garbge or health affect</h2>
+        <Car/>
+        </div>
+    );
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Garbage/>
+  </React.StrictMode>
+);
+
+
+output:
+
+garbge or health affect
+
+renu vijay
+
+
+
+
+
+
+ //  div used and only angle bracket work  same process
+
+
+ div used  before code
+
+
+ function Garbage(){
+    return(
+        <div>
+        <h2>garbge or health affect</h2>
+        <Car/>
+        </div>
+    );
+}
+
+
+not div used  After code as same process work 
+
+
+function Garbage(){
+    return(
+        <>
+        <h2>garbge or health affect</h2>
+        <Car/>
+        </>
+    );
+}
+
+
+output:
+
+garbge or health affect
+
+renu vijay
+
+
+
+
+.... sure this code can createthe index.js work instead the individualfile can 
+create the component should work 
+
+eg sr file can create file name 
+
+components inside file 
+creating 
+
+car.js no various name can use but same name is suitable 
+
+mar.js no problem 
+
+
+
+
+
+
+
+
+ok lets the components can cretethe individual file from the src file 
+
+
+first can createthe car.js file include the code.
+
+function Car(){
+    return(
+        <h2>renu vijay</h2>
+    );
+}
+
+export default Car;
+
+
+After 
+
+.. import the index.js file the car 
+
+
+import Car from './Car/components/car'
+
+
+then work is ok
+
+
+
+then next same process the Garbge can same process
+
+create file Garbage.js
+
+include the code 
+
+
+
+
+function Garbage(){
+    return(
+        <>
+        <h2>garbge or health affect</h2>
+        <Car/>
+        </>
+    );
+}
+
+
+export default Garbage;
+
+
+then the import car code cut from the Garbage file is necessary
+
+
+import Car from './Car/components/car'
+
+
+function Garbage(){
+    return(
+        <>
+        <h2>garbge or health affect</h2>
+        <Car/>
+        </>
+    );
+}
+
+export default Garbage;
+
+
+
+
+..then save the chrome gives some error theerror resolve code change from 
+
+
+import statement code in the Garbage code becase the Gabage file
+ can include components file
+
+
+
+
+import Car from './Car'
+
+
+the  afterindex.js can import the 
+
+
+Garbage import statement then also work 
+
+
+
+code ... index.js file finally..
+
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import Garbage from './components/Garbage';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Garbage/>
+  </React.StrictMode>
+);
+
+
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+the savethecodes can work same 
+
+
+
+
+
+output
+
+garbage or health affect
+
+renu vijay
